@@ -1,0 +1,10 @@
+2026-04-09 11:50:34,197-Main-INFO-天气获取程序启动
+2026-04-09 11:50:34,198-api.weather_api-INFO-开始请求天气数据: (38.042,114.5089)
+2026-04-09 11:50:34,198-utils.request_util-INFO-开始请求：GEThttps://api.open-meteo.com/v1/forecast
+2026-04-09 11:50:35,696-utils.request_util-INFO-请求完成 状态码：200
+2026-04-09 11:50:35,697-api.weather_api-INFO-当前温度：14.5℃
+2026-04-09 11:50:35,697-api.weather_api-INFO-体感温度：14.1℃
+2026-04-09 11:50:35,697-api.weather_api-INFO-湿度：74%
+2026-04-09 11:50:35,697-api.weather_api-INFO-降水量：0.0mm
+2026-04-09 11:50:35,698-utils.file_util-INFO-数据已成功保存到data\石家庄天气.json
+2026-04-09 11:50:35,698-Main-INFO-天气获取程序运行结束

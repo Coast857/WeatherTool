@@ -1,0 +1,7 @@
+[32mINFO    [0m api.weather_api:weather_api.py:77 开始请求天气数据: (38.042,114.5089)
+[32mINFO    [0m utils.request_util:request_util.py:25 开始请求：GEThttps://api.open-meteo.com/v1/forecast
+[32mINFO    [0m utils.request_util:request_util.py:36 请求完成 状态码：200
+[32mINFO    [0m api.weather_api:weather_api.py:96 当前温度：20.1℃
+[32mINFO    [0m api.weather_api:weather_api.py:99 体感温度：20.4℃
+[32mINFO    [0m api.weather_api:weather_api.py:102 湿度：70%
+[32mINFO    [0m api.weather_api:weather_api.py:105 降水量：0.0mm

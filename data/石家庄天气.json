@@ -1,0 +1,31 @@
+{
+    "latitude": 38.0,
+    "longitude": 114.5,
+    "generationtime_ms": 0.095367431640625,
+    "utc_offset_seconds": 28800,
+    "timezone": "Asia/Shanghai",
+    "timezone_abbreviation": "GMT+8",
+    "elevation": 73.0,
+    "current_units": {
+        "time": "iso8601",
+        "interval": "seconds",
+        "temperature_2m": "°C",
+        "relative_humidity_2m": "%",
+        "apparent_temperature": "°C",
+        "precipitation": "mm",
+        "weather_code": "wmo code",
+        "wind_speed_10m": "km/h",
+        "wind_direction_10m": "°"
+    },
+    "current": {
+        "time": "2026-04-09T11:45",
+        "interval": 900,
+        "temperature_2m": 14.5,
+        "relative_humidity_2m": 74,
+        "apparent_temperature": 14.1,
+        "precipitation": 0.0,
+        "weather_code": 2,
+        "wind_speed_10m": 6.6,
+        "wind_direction_10m": 103
+    }
+}

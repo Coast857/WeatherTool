@@ -1,0 +1,10 @@
+#测试框架
+pytest==7.4.0
+#网络请求库
+requests==2.31.0
+#YAML解析库
+PyYAML==6.0.1
+#Allure与Pytest的连接插件
+allure-pytest==2.13.2
+#进行数据结构校验的库
+jsonschema==4.19.0

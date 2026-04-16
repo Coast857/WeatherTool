@@ -1,0 +1,23 @@
+2026-04-13 16:02:55,667-api.weather_api-INFO-开始请求天气数据: (38.042,114.5089)
+2026-04-13 16:02:55,669-utils.request_util-INFO-开始请求：GEThttps://api.open-meteo.com/v1/forecast
+2026-04-13 16:02:57,847-utils.request_util-INFO-请求完成 状态码：200
+2026-04-13 16:02:57,847-api.weather_api-INFO-当前温度：16.7℃
+2026-04-13 16:02:57,848-api.weather_api-INFO-体感温度：14.6℃
+2026-04-13 16:02:57,848-api.weather_api-INFO-湿度：55%
+2026-04-13 16:02:57,848-api.weather_api-INFO-降水量：0.0mm
+2026-04-13 16:02:57,848-api.weather_api-INFO-开始请求天气数据: (39.9042,116.4074)
+2026-04-13 16:02:57,848-utils.request_util-INFO-开始请求：GEThttps://api.open-meteo.com/v1/forecast
+2026-04-13 16:03:02,875-utils.request_util-ERROR-请求失败 第1次：('Connection aborted.', ConnectionResetError(10054, '远程主机强迫关闭了一个现有的连接。', None, 10054, None))
+2026-04-13 16:03:03,875-utils.request_util-INFO-开始请求：GEThttps://api.open-meteo.com/v1/forecast
+2026-04-13 16:03:05,106-utils.request_util-INFO-请求完成 状态码：200
+2026-04-13 16:03:05,106-api.weather_api-INFO-当前温度：18.0℃
+2026-04-13 16:03:05,115-api.weather_api-INFO-体感温度：14.5℃
+2026-04-13 16:03:05,115-api.weather_api-INFO-湿度：24%
+2026-04-13 16:03:05,115-api.weather_api-INFO-降水量：0.0mm
+2026-04-13 16:03:05,120-api.weather_api-INFO-开始请求天气数据: (39.0842,117.2009)
+2026-04-13 16:03:05,120-utils.request_util-INFO-开始请求：GEThttps://api.open-meteo.com/v1/forecast
+2026-04-13 16:03:06,394-utils.request_util-INFO-请求完成 状态码：200
+2026-04-13 16:03:06,395-api.weather_api-INFO-当前温度：15.8℃
+2026-04-13 16:03:06,395-api.weather_api-INFO-体感温度：12.6℃
+2026-04-13 16:03:06,395-api.weather_api-INFO-湿度：37%
+2026-04-13 16:03:06,395-api.weather_api-INFO-降水量：0.0mm
