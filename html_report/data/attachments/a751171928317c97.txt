@@ -1,7 +1,0 @@
-2026-04-16 11:26:34,889-api.weather_api-INFO-开始请求天气数据: (38.042,114.5089)
-2026-04-16 11:26:34,889-utils.request_util-INFO-开始请求：GEThttps://api.open-meteo.com/v1/forecast
-2026-04-16 11:26:36,325-utils.request_util-INFO-请求完成 状态码：200
-2026-04-16 11:26:36,325-api.weather_api-INFO-当前温度：20.1℃
-2026-04-16 11:26:36,325-api.weather_api-INFO-体感温度：20.4℃
-2026-04-16 11:26:36,325-api.weather_api-INFO-湿度：70%
-2026-04-16 11:26:36,325-api.weather_api-INFO-降水量：0.0mm

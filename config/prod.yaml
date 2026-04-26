@@ -1,0 +1,17 @@
+api:
+  base_url: "https://api.open-meteo.com/v1/forecast"
+
+city:
+  北京:
+    lat: 39.9
+    lon: 116.4
+
+  上海:
+    lat: 31.2
+    lon: 121.5
+
+  石家庄:
+    lat: 38.0
+    lon: 114.5
+
+timezone: "Asia/Shanghai"

@@ -1,5 +1,0 @@
-2026-04-09 10:47:53,412-Main-INFO-天气获取程序启动
-2026-04-09 10:47:53,413-api.weather_api-INFO-开始向https//api.weather.com/open-meteo.com/v1/forecast请求经纬度（38.042,114.5089）的天气数据…
-2026-04-09 10:47:53,419-api.weather_api-ERROR-网络请求失败：Invalid URL 'https//api.weather.com/open-meteo.com/v1/forecast': No scheme supplied. Perhaps you meant https://https//api.weather.com/open-meteo.com/v1/forecast?
-2026-04-09 10:47:53,419-Main-WARNING-未获取到天气数据，已跳过存储步骤
-2026-04-09 10:47:53,419-Main-INFO-天气获取程序运行结束

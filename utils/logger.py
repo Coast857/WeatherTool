@@ -10,8 +10,10 @@ def get_logger(name="ProjectLogger"):#定义获取日志记录器的函数
             os.makedirs('logs')
         current_time=datetime.now().strftime("%Y%m%d_%H%M%S")#获取当前时间并格式化为字符串
         log_file_path=f'logs/weather_{current_time}.log'#拼接日志文件的相对路径
+
         file_handler=logging.FileHandler(log_file_path,encoding='utf-8')#创建文件处理器
         file_handler.setLevel(logging.INFO)#设置文件处理器的日志级别为INFO
+
         console_handler=logging.StreamHandler()#创建控制台处理器
         console_handler.setLevel(logging.INFO)#设置控制台处理器的日志级别
         formatter=logging.Formatter('%(asctime)s-%(name)s-%(levelname)s-%(message)s')#定义日志输出格式，加入name表示日志来源

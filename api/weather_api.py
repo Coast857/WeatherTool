@@ -1,113 +1,138 @@
-# 业务接口模块
-# 将网络请求逻辑改为使用RequestUtil统一管理
-import yaml  # 导入yaml解析库
-import os  # 导入os模块
-from utils.logger import get_logger  # 导入日志模块
-from utils.request_util import RequestUtil  # 导入请求工具类
+# api/weather_api.py
+import yaml  # 解析yaml配置文件
+import os  # 读取环境变量
+from utils.logger import get_logger  # 导入日志工具
+from utils.request_util import RequestUtil  # 导入请求工具
 
-# 初始化日志
+#初始化日志
 logger = get_logger(__name__)
-# 创建请求工具实例
+
+# 初始化请求工具
 request_util = RequestUtil()
 
-def load_config(config_path='config/config.yaml'):
+def load_config():
+    """
+    根据环境变量加载对应的配置文件
+
+    ENV=dev → dev.yaml
+    ENV=test → test.yaml
+    ENV=prod → prod.yaml
+    """
+
     try:
+        # 获取环境变量ENV
+        # 如果没有设置，默认使用dev环境
+        env = os.getenv("ENV", "dev")
+
+        # 构建配置文件路径
+        config_path = f"config/{env}.yaml"
+
+        logger.info(f"加载配置文件: {config_path}")
 
         # 打开配置文件
-        with open(config_path, 'r', encoding='utf-8') as f:
-            # 解析YAML并返回字典
-            return yaml.safe_load(f)
+        with open(config_path, "r", encoding="utf-8") as f:
+
+            # 解析yaml
+            config = yaml.safe_load(f)
+
+            return config
 
     except Exception as e:
-        # 记录错误日志
-        logger.error(f"读取配置文件失败:{e}")
-        return None
-def fetch_weather():
 
-    #获取天气数据（核心业务函数）
-    # 加载配置
+        logger.error(f"读取配置文件失败: {e}")
+
+        return None
+
+
+def fetch_weather(city_name):
+    """
+    获取指定城市天气
+
+    city_name: 城市名称（北京/上海等）
+    """
+
     config = load_config()
-    # 判断配置是否成功加载
+
     if not config:
-        logger.error("配置文件不存在或为空")
+        logger.error("配置加载失败")
         return None
-    # 获取api配置
-    api_config = config.get('api')
-    # 检查是否是字典
-    if not isinstance(api_config, dict):
-        logger.error(
-            "配置文件结构错误：'api'节点不是字典"
-        )
-        return None
-    # 获取city配置
-    city_config = config.get('city')
-    if not isinstance(city_config, dict):
-        logger.error(
-            "配置文件结构错误：'city'节点不是字典"
-        )
-        return None
-    # 获取URL
-    base_url = api_config['base_url']
-    # 获取城市信息
-    lat = city_config['lat']
-    lon = city_config['lon']
-    timezone = city_config['timezone']
-    # 构建请求参数
-    params = {
-
-        "latitude": lat,
-
-        "longitude": lon,
-
-        "current":
-            "temperature_2m,"
-            "relative_humidity_2m,"
-            "apparent_temperature,"
-            "precipitation,"
-            "weather_code,"
-            "wind_speed_10m,"
-            "wind_direction_10m",
-
-        "timezone": timezone
-    }
 
     try:
 
-        # 打印请求日志
+        # 获取API配置
+        api_config = config.get("api")
+
+        # 获取城市配置
+        city_dict = config.get("city")
+
+        timezone = config.get("timezone")
+
+        # 检查城市是否存在
+        if city_name not in city_dict:
+
+            logger.error(f"未找到城市配置: {city_name}")
+
+            return None
+
+        # 获取城市经纬度
+        lat = city_dict[city_name]["lat"]
+
+        lon = city_dict[city_name]["lon"]
+
+        # 构建请求参数
+        params = {
+
+            "latitude": lat,
+
+            "longitude": lon,
+
+            "current":
+                "temperature_2m,"
+                "relative_humidity_2m,"
+                "apparent_temperature,"
+                "precipitation,"
+                "weather_code,"
+                "wind_speed_10m,"
+                "wind_direction_10m",
+
+            "timezone": timezone
+        }
+
         logger.info(
-            f"开始请求天气数据: ({lat},{lon})"
-        )
-        # 使用RequestUtil发送请求（核心升级点）
-        data = request_util.send_request(
-            method="GET",
-            url=base_url,
-            params=params,
-            timeout=5,
-            retry=3
+            f"开始请求 {city_name} 天气 ({lat},{lon})"
         )
 
-        # 判断是否成功
+        # 调用请求工具
+        data = request_util.send_request(
+
+            method="GET",
+
+            url=api_config["base_url"],
+
+            params=params,
+
+            timeout=5,
+
+            retry=3
+
+        )
+
         if not data:
+
             logger.error("未获取到天气数据")
+
             return None
-        # 提取current字段
-        current = data.get('current', {})
-        # 打印天气信息
+
+        current = data.get("current", {})
+
         logger.info(
-            f"当前温度：{current.get('temperature_2m')}℃"
+            f"{city_name} 当前温度：{current.get('temperature_2m')}℃"
         )
-        logger.info(
-            f"体感温度：{current.get('apparent_temperature')}℃"
-        )
-        logger.info(
-            f"湿度：{current.get('relative_humidity_2m')}%"
-        )
-        logger.info(
-            f"降水量：{current.get('precipitation')}mm"
-        )
+
         return data
+
     except Exception as e:
-        logger.error(
-            f"天气获取失败: {e}"
-        )
+
+        logger.error(f"天气获取失败: {e}")
+
         return None

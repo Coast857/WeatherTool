@@ -1,9 +1,0 @@
-2026-04-09 10:49:46,772-Main-INFO-天气获取程序启动
-2026-04-09 10:49:46,772-api.weather_api-INFO-开始向https://api.open-meteo.com/v1/forecast请求经纬度（38.042,114.5089）的天气数据…
-2026-04-09 10:49:48,279-api.weather_api-INFO-成功获取天气数据解析
-2026-04-09 10:49:48,279-api.weather_api-INFO-当前温度：13.4℃
-2026-04-09 10:49:48,279-api.weather_api-INFO-体感温度：13.4℃
-2026-04-09 10:49:48,279-api.weather_api-INFO-湿度：77%
-2026-04-09 10:49:48,279-api.weather_api-INFO-降水量：0.0mm
-2026-04-09 10:49:48,281-utils.file_util-INFO-数据已成功保存到data\石家庄天气.json
-2026-04-09 10:49:48,282-Main-INFO-天气获取程序运行结束

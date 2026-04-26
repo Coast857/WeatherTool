@@ -1,0 +1,7 @@
+2026-04-22 14:03:09,923-api.weather_api-INFO-开始请求天气数据: (39.9042,116.4074)
+2026-04-22 14:03:09,923-utils.request_util-INFO-开始请求：GEThttps://api.open-meteo.com/v1/forecast
+2026-04-22 14:03:11,241-utils.request_util-INFO-请求完成 状态码：200
+2026-04-22 14:03:11,243-api.weather_api-INFO-当前温度：23.2℃
+2026-04-22 14:03:11,243-api.weather_api-INFO-体感温度：21.7℃
+2026-04-22 14:03:11,243-api.weather_api-INFO-湿度：28%
+2026-04-22 14:03:11,243-api.weather_api-INFO-降水量：0.0mm

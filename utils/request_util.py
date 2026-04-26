@@ -18,6 +18,12 @@ class RequestUtil:
             timeout=10,
             retry=3
     ):
+        '''
+        指数退避重试：
+        第1次失败：等1s
+        2次失败：等2s
+        3次失败：等4s
+        '''
         #retry核心循环
         for i in range(retry):
             try:
@@ -45,4 +51,9 @@ class RequestUtil:
                 if i==retry-1:
                     logger.error("达到最大重试次数，请求最终失败")
                     return None
-                time.sleep(1)#等待1秒再重试
+                #指数退避
+                sleep_time= 2**i
+                logger.info(
+                    f"等待{sleep_time}秒后重试"
+                )
+                time.sleep(sleep_time)#等待1秒再重试

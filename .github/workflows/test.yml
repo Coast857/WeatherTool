@@ -1,0 +1,22 @@
+name: Weather Test
+on:
+  push:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        city: [北京，上海，石家庄]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+      - name: Install dependencies
+        run:
+          pip install -r requirements.txt
+      - name: Run Test
+        run:
+          python main.py --city ${{ matrix.city }}

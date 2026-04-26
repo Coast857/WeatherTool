@@ -1,0 +1,15 @@
+2026-04-26 10:58:48,133-Main-INFO-天气获取程序启动
+2026-04-26 10:58:48,133-api.weather_api-INFO-加载配置文件: config/test.yaml
+2026-04-26 10:58:48,140-api.weather_api-INFO-开始请求 北京 天气 (39.9,116.4)
+2026-04-26 10:58:48,140-utils.request_util-INFO-开始请求：GEThttps://api.ope-meteo.com/v1/forecast
+2026-04-26 10:58:48,724-utils.request_util-ERROR-请求失败 第1次：HTTPSConnectionPool(host='api.ope-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=39.9&longitude=116.4&current=temperature_2m%2Crelative_humidity_2m%2Capparent_temperature%2Cprecipitation%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&timezone=Asia%2FShanghai (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+2026-04-26 10:58:48,724-utils.request_util-INFO-等待1秒后重试
+2026-04-26 10:58:49,726-utils.request_util-INFO-开始请求：GEThttps://api.ope-meteo.com/v1/forecast
+2026-04-26 10:58:50,053-utils.request_util-ERROR-请求失败 第2次：HTTPSConnectionPool(host='api.ope-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=39.9&longitude=116.4&current=temperature_2m%2Crelative_humidity_2m%2Capparent_temperature%2Cprecipitation%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&timezone=Asia%2FShanghai (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+2026-04-26 10:58:50,053-utils.request_util-INFO-等待2秒后重试
+2026-04-26 10:58:52,054-utils.request_util-INFO-开始请求：GEThttps://api.ope-meteo.com/v1/forecast
+2026-04-26 10:58:52,387-utils.request_util-ERROR-请求失败 第3次：HTTPSConnectionPool(host='api.ope-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=39.9&longitude=116.4&current=temperature_2m%2Crelative_humidity_2m%2Capparent_temperature%2Cprecipitation%2Cweather_code%2Cwind_speed_10m%2Cwind_direction_10m&timezone=Asia%2FShanghai (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)')))
+2026-04-26 10:58:52,387-utils.request_util-ERROR-达到最大重试次数，请求最终失败
+2026-04-26 10:58:52,387-api.weather_api-ERROR-未获取到天气数据
+2026-04-26 10:58:52,387-Main-WARNING-未获取到天气数据
+2026-04-26 10:58:52,387-Main-INFO-程序运行结束

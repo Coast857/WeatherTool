@@ -1,9 +1,0 @@
-2026-04-09 10:48:46,419-Main-INFO-天气获取程序启动
-2026-04-09 10:48:46,420-api.weather_api-INFO-开始向https://api.open-meteo.com/v1/forecast请求经纬度（38.042,114.5089）的天气数据…
-2026-04-09 10:48:48,154-api.weather_api-INFO-成功获取天气数据解析
-2026-04-09 10:48:48,154-api.weather_api-INFO-当前温度：13.4℃
-2026-04-09 10:48:48,154-api.weather_api-INFO-体感温度：13.4℃
-2026-04-09 10:48:48,154-api.weather_api-INFO-湿度：77%
-2026-04-09 10:48:48,154-api.weather_api-INFO-降水量：0.0mm
-2026-04-09 10:48:48,155-utils.file_util-ERROR-保存文件失败：name 'dirctory' is not defined
-2026-04-09 10:48:48,155-Main-INFO-天气获取程序运行结束

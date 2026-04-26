@@ -1,4 +1,4 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","1439","获取城市天气数据 - 石家庄","tests","2026-04-16","passed","2026-04-16","","test_weather_api","",""
-"","1338","获取城市天气数据 - 北京","tests","2026-04-16","passed","2026-04-16","","test_weather_api","",""
-"","1263","获取城市天气数据 - 天津","tests","2026-04-16","passed","2026-04-16","","test_weather_api","",""
+"","1535","获取城市天气数据 - 天津","tests","2026-04-22","passed","2026-04-22","","test_weather_api","",""
+"","1295","获取城市天气数据 - 石家庄","tests","2026-04-22","passed","2026-04-22","","test_weather_api","",""
+"","1427","获取城市天气数据 - 北京","tests","2026-04-22","passed","2026-04-22","","test_weather_api","",""

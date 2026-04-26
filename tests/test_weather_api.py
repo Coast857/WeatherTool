@@ -25,7 +25,7 @@ WEATHER_SCHEMA={
     }
 }
 def read_yaml_data(yaml_path):
-    #定义一个辅助函数，读取yaml文件并返回测试数据列表
+    #定义一个辅助函数，用来读取yaml文件并返回测试数据列表
 
     #拼接路径
     full_path=os.path.join(os.getcwd(),yaml_path)
@@ -88,7 +88,7 @@ def test_weather_api(data,mock_config_generator):
     with patch('api.weather_api.load_config',return_value=mock_config_data):
         with allure.step("步骤2：调用fetch_weather接口发起网络请求"):
             #1.执行被测函数
-            result=fetch_weather()
+            result=fetch_weather(city_name)
         with allure.step("步骤3：校验接口返回的数据结构和核心字段"):
             #2.核心断言：验证结果不为空
             assert result is not None,f"获取{city_name}天气数据失败，返回了None"
